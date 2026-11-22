@@ -3,10 +3,24 @@
 A text-based Klondike Solitaire game written in Python 3 (no external libraries).
 
 ## Run it
+
+**Graphical version (recommended)** - needs only Python 3 with tkinter, which is included with the standard Windows installer:
+```
+python phase4_gui.py              # draw 1 card at a time
+python phase4_gui.py --draw 3     # draw 3 cards at a time
+python phase4_gui.py --seed 42    # repeatable deal
+```
+- Click the stock (top-left) to draw; click the empty stock to reuse the waste pile.
+- Drag cards (or a whole run of cards) between columns, or up to the foundations.
+- Double-click a card to send it to the foundation.
+- Buttons: New Game, Undo, Redo, Hint (outlines the suggested move), Auto. Keys: Ctrl+Z, Ctrl+Y, Ctrl+N, H.
+- The top bar shows score, moves and time; Draw 1 / Draw 3 switches the mode.
+
+**Text version**
 ```
 python phase4.py              # draw 1 card at a time
-python phase4.py --draw 3     # draw 3 cards at a time
-python phase4.py --seed 42    # repeatable deal
+python phase4.py --draw 3
+python phase4.py --seed 42
 python phase4.py --no-color   # if red suits look odd in your terminal
 ```
 
@@ -21,8 +35,11 @@ python -m unittest -v
 | `phase1.py` | 1 - Card and Deck | `Card` (suit, rank, face up/down), `Deck` with a Fisher-Yates shuffle |
 | `phase2.py` | 2 - Tableau and Foundation | `Stack`, `Queue`, doubly linked-list `TableauPile`, `FoundationPile`, card movement functions |
 | `phase3.py` | 3 - Game Logic | `Game`: move validation, stock drawing, card flipping, undo/redo, hints, scoring, timer |
-| `phase4.py` | 4 - User Interface | Text interface (run this file) |
-| `test_solitaire.py` | Validation & Testing | 41 unit tests |
+| `phase4_gui.py` | 4 - User Interface | Graphical interface (tkinter) - run this file |
+| `gui_logic.py` | 4 - User Interface | Card positions, mouse hit-testing and drag-and-drop rules (no drawing) |
+| `phase4.py` | 4 - User Interface | Text interface |
+| `test_solitaire.py` | Validation & Testing | 41 tests of the game logic and data structures |
+| `test_gui.py` | Validation & Testing | 27 tests of the GUI logic and window (replays clicks and drags) |
 
 ## Data structures used
 | Structure | Where |
