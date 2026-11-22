@@ -2,34 +2,8 @@
 
 A text-based Klondike Solitaire game written in Python 3 (no external libraries).
 
-## Run it
 
-**Graphical version (recommended)** - needs only Python 3 with tkinter, which is included with the standard Windows installer:
-```
-python phase4_gui.py              # draw 1 card at a time
-python phase4_gui.py --draw 3     # draw 3 cards at a time
-python phase4_gui.py --seed 42    # repeatable deal
-```
-- Click the stock (top-left) to draw; click the empty stock to reuse the waste pile.
-- Drag cards (or a whole run of cards) between columns, or up to the foundations.
-- Double-click a card to send it to the foundation.
-- Buttons: New Game, Undo, Redo, Hint (outlines the suggested move), Auto. Keys: Ctrl+Z, Ctrl+Y, Ctrl+N, H.
-- The top bar shows score, moves and time; Draw 1 / Draw 3 switches the mode.
-
-**Text version**
-```
-python phase4.py              # draw 1 card at a time
-python phase4.py --draw 3
-python phase4.py --seed 42
-python phase4.py --no-color   # if red suits look odd in your terminal
-```
-
-## Run the tests
-```
-python -m unittest -v
-```
-
-## Files (one per project phase)
+## Files
 | File | Phase | What it contains |
 |------|-------|------------------|
 | `phase1.py` | 1 - Card and Deck | `Card` (suit, rank, face up/down), `Deck` with a Fisher-Yates shuffle |
